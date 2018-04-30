@@ -3,17 +3,20 @@ PIR Stands for Passive infrared. This motion sensor consists of a fresnel lens, 
 
 
 Step 1:
-Blinking an LED Using the Raspberry Pi GPIO-Output GPIO Control
+Blinking an LED Using the Raspberry Pi GPIO-Output GPIO Control( Refer to Raspberry Pi GPIO LED connection diagram.png)
 
 After you have set up your Raspberry Pi, we can now start messing around with its GPIO pins. Here, we will try to blink an LED using a Python script. Copy and paste the following code into your Raspberry Pi. (Refer to ledblink.py)
 
 
 Step 2:
-
-
 Next, we need to connect the LED to pin 3 on the Raspberry Pi GPIO. 
+( Refer to Raspberry Pi GPIO LED connection diagram.png)
+You should notice that the LED starts blinking after you execute the Python program using this command: sudo python ledblink.py. The LED blinks because it receives a HIGH (5V) signal and a LOW (0V) signal from the Raspberry Pi GPIO at a delay of one second. 
 
+Step 3:
+Interfacing the PIR Motion Sensor to the Raspberry Pi's Input GPIO (refer to pirtest.py)
+Read Now, we can try reading the output from the PIR motion sensor. The sensor outputs a digital HIGH (5V) signal when it detects a person.
+Connect your Raspberry Pi GPIO to the PIR motion sensor as per the connection diagram
+(Refer to Raspberry Pi PIR motion sensor connection.jpeg)
 
-Raspberry Pi GPIO LED connection diagram
-
-You should notice that the LED starts blinking after you execute the Python program using this command: sudo python ledblink.py. The LED blinks because it receives a HIGH (5V) signal and a LOW (0V) signal from the Raspberry Pi GPIO at a delay of one second. You can check out the video below for a demo:
+You will notice that this code prints "Intruder detected" when you place your hand over the sensor. After removing your hand and waiting some time, it prints: "No intruders". In certain PIR motion sensors, you can even adjust the delay at which the sensor outputs a HIGH signal at the expense of compromising the accuracy. You just need to turn the two knobs on the sensor counterclockwise using a screwdriver.( Refer to PIR Motion Sensor pin out.jpeg and PIR motion sensor adjustment knobs.jpeg)
